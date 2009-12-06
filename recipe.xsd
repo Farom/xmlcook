@@ -23,6 +23,7 @@ zB Erhitzen</xs:documentation>
       </xs:attribute>
       <xs:attributeGroup ref="Dauer_T"/>
       <xs:attribute name="threadID" type="xs:token"/>
+      <xs:attribute name="optional" type="xs:boolean"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="zutat">

@@ -79,6 +79,14 @@ Wenn man 10 min Möhren raspelt und dann 30 Minuten kocht, ist die Verarbeitungs
         </xs:annotation>
       </xs:element>
       <xs:element maxOccurs="unbounded" minOccurs="0" name="tag" type="xs:string"/>
+      <xs:element name="language">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="deutsch"/>
+            <xs:enumeration value="english"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
     </xs:sequence>
     <xs:attributeGroup ref="Dauer_T"/>
   </xs:complexType>

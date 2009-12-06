@@ -10,12 +10,12 @@
     </xs:complexType>
   </xs:element>
   <xs:complexType mixed="true" name="Step_T">
-    <xs:sequence>
+    <xs:choice>
       <xs:element minOccurs="0" maxOccurs="unbounded" ref="zutat"/>
       <xs:element maxOccurs="unbounded" minOccurs="0" name="tool" type="Tool_T"/>
       <xs:element maxOccurs="unbounded" minOccurs="0" name="activity" type="Activity_T"/>
       <xs:element maxOccurs="unbounded" minOccurs="0" name="step" type="Step_T"/>
-    </xs:sequence>
+    </xs:choice>
     <xs:attribute name="beschreibung">
       <xs:annotation>
         <xs:documentation>Beschreibung des Vorganges
@@ -25,6 +25,14 @@ zB Erhitzen</xs:documentation>
     <xs:attributeGroup ref="Dauer_T"/>
     <xs:attribute name="threadID" type="xs:token"/>
     <xs:attribute name="optional" type="xs:boolean"/>
+  </xs:complexType>
+  <xs:complexType name="park">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="zutat"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="tool" type="Tool_T"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="activity" type="Activity_T"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="step" type="Step_T"/>
+    </xs:sequence>
   </xs:complexType>
   <xs:element name="zutat">
     <xs:complexType mixed="true">

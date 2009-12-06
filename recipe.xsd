@@ -13,8 +13,9 @@
     <xs:complexType mixed="true">
       <xs:sequence>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="zutat"/>
+        <xs:element maxOccurs="unbounded" minOccurs="0" name="tool" type="Tool_T"/>
+        <xs:element maxOccurs="unbounded" minOccurs="0" name="activity" type="Activity_T"/>
         <xs:element maxOccurs="unbounded" minOccurs="0" ref="step"/>
-        <xs:element maxOccurs="unbounded" minOccurs="0" name="activity" type="xs:string"/>
       </xs:sequence>
       <xs:attribute name="beschreibung">
         <xs:annotation>
@@ -90,5 +91,17 @@ Wenn man 10 min Möhren raspelt und dann 30 Minuten kocht, ist die Verarbeitungs
       </xs:element>
     </xs:sequence>
     <xs:attributeGroup ref="Dauer_T"/>
+  </xs:complexType>
+  <xs:complexType name="Activity_T">
+    <xs:simpleContent>
+      <xs:extension base="xs:string"/>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="Tool_T">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="id" type="xs:token"/>
+      </xs:extension>
+    </xs:simpleContent>
   </xs:complexType>
 </xs:schema>

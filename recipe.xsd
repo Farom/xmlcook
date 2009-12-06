@@ -23,16 +23,8 @@ zB Erhitzen</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attributeGroup ref="Dauer_T"/>
-    <xs:attribute name="threadID" type="xs:token"/>
-    <xs:attribute name="optional" type="xs:boolean"/>
-  </xs:complexType>
-  <xs:complexType name="park">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" ref="zutat"/>
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="tool" type="Tool_T"/>
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="activity" type="Activity_T"/>
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="step" type="Step_T"/>
-    </xs:sequence>
+    <xs:attribute name="threadID" type="xs:token" default="1"/>
+    <xs:attribute default="false" name="optional" type="xs:boolean"/>
   </xs:complexType>
   <xs:element name="zutat">
     <xs:complexType mixed="true">
@@ -102,7 +94,9 @@ Wenn man 10 min Möhren raspelt und dann 30 Minuten kocht, ist die Verarbeitungs
   </xs:complexType>
   <xs:complexType name="Activity_T">
     <xs:simpleContent>
-      <xs:extension base="xs:string"/>
+      <xs:extension base="xs:string">
+        <xs:attribute name="modified" type="xs:string"/>
+      </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
   <xs:complexType name="Tool_T">

@@ -54,7 +54,9 @@ In 400 g Gehacktes, wäre das "400"</xs:documentation>
     <xs:attribute name="bearbeitungsdauer" type="xs:duration">
       <xs:annotation>
         <xs:documentation>Dauer die in diesem Schritt/Rezept an Arbeitszeit benötigt wird.
-Wenn man 10 min Möhren raspelt und dann 30 Minuten kocht, ist die Bearbeitungsdauer 10 min + 5 Minuten umrühren.</xs:documentation>
+Wenn man 10 min Möhren raspelt und dann 30 Minuten kocht, ist die Bearbeitungsdauer 10 min + 5 Minuten umrühren.
+10 min sind PT10M
+Period .. Time .. 10 Minutes</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="verarbeitungsdauer" type="xs:duration">

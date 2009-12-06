@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="rezept">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element name="beschreibung" type="Beschreibung_T"/>
+        <xs:element maxOccurs="unbounded" minOccurs="0" name="tag" type="xs:string"/>
+        <xs:element maxOccurs="unbounded" minOccurs="0" ref="rezept"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="step"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="step">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="zutat"/>
+        <xs:element maxOccurs="unbounded" minOccurs="0" ref="step"/>
+      </xs:sequence>
+      <xs:attribute name="beschreibung">
+        <xs:annotation>
+          <xs:documentation>Beschreibung des Vorganges
+zB Erhitzen</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attributeGroup ref="Dauer_T"/>
+      <xs:attribute name="threadID" type="xs:token"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="zutat">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Einheit" type="xs:NCName">
+        <xs:annotation>
+          <xs:documentation>Normalform einer Einheit.
+"TL" ist die Kurzform, Normalform ist "Teelöffel"</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="kEinheit" type="xs:NCName">
+        <xs:annotation>
+          <xs:documentation>Kurzform einer Einheit</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="menge" use="optional" type="xs:float">
+        <xs:annotation>
+          <xs:documentation>Nominale Menge einer Zutat.
+In 400 g Gehacktes, wäre das "400"</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute ref="type"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="Dauer_T">
+    <xs:attribute name="bearbeitungsdauer" type="xs:duration">
+      <xs:annotation>
+        <xs:documentation>Dauer die in diesem Schritt/Rezept an Arbeitszeit benötigt wird.
+Wenn man 10 min Möhren raspelt und dann 30 Minuten kocht, ist die Bearbeitungsdauer 10 min + 5 Minuten umrühren.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="verarbeitungsdauer" type="xs:duration">
+      <xs:annotation>
+        <xs:documentation>Dauer die dieser Schritt/Rezept braucht, vom Beginn bis zum Ende.
+Wenn man 10 min Möhren raspelt und dann 30 Minuten kocht, ist die Verarbeitungsdauer 40 min.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <xs:attribute default="muß man kaufen" name="type">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="hat man in der Küche"/>
+        <xs:enumeration value="muß man kaufen"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
+  <xs:complexType name="Beschreibung_T">
+    <xs:sequence>
+      <xs:element name="anzahl_personen" type="xs:positiveInteger">
+        <xs:annotation>
+          <xs:documentation>Dieser Wert gibt an, für wieviele Personen das Rezept gedacht ist.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="name" type="xs:string"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="Dauer_T"/>
+  </xs:complexType>
+</xs:schema>

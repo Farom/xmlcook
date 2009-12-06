@@ -1,1 +1,28 @@
+  // Purpose \\
+————————————————————————————————————————————————————————————————————————————————
 This is a repository for some xml stuff i use for cooking.
+The idea is to use a xml-editor and a xml-schema-definition to write recipes
+in a fast, comfortable and as possible human readable way.
+
+  // Goal \\
+————————————————————————————————————————————————————————————————————————————————
+Just put a sauerbraten.xml onto your server somewhere and everybody can look at
+it, copy it, get a step by step manual, calculating different sizes, calories …
+
+
+  // ToDo \\
+————————————————————————————————————————————————————————————————————————————————
+ • make experimentals possible / substitutions
+ • give them a ID, history (for this feature i am looking for a person
+   trying this)
+
+
+  // Files \\
+————————————————————————————————————————————————————————————————————————————————
+recipe.xsd
+ • XML schema file for simpler editing of recipes in xml-editing-mode
+ • this file is in heavy development
+example-recipes/
+ • Directory where some recipes are stored for testing purpose
+ • at the moment these are all my recipes i write since this project started
+————————————————————————————————————————————————————————————————————————————————

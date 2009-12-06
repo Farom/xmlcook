@@ -4,7 +4,6 @@
     <xs:complexType mixed="true">
       <xs:sequence>
         <xs:element name="beschreibung" type="Beschreibung_T"/>
-        <xs:element maxOccurs="unbounded" minOccurs="0" name="tag" type="xs:string"/>
         <xs:element maxOccurs="unbounded" minOccurs="0" ref="rezept"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="step"/>
       </xs:sequence>
@@ -72,12 +71,13 @@ Wenn man 10 min Möhren raspelt und dann 30 Minuten kocht, ist die Verarbeitungs
   </xs:attribute>
   <xs:complexType name="Beschreibung_T">
     <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
       <xs:element name="anzahl_personen" type="xs:positiveInteger">
         <xs:annotation>
           <xs:documentation>Dieser Wert gibt an, für wieviele Personen das Rezept gedacht ist.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="name" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="tag" type="xs:string"/>
     </xs:sequence>
     <xs:attributeGroup ref="Dauer_T"/>
   </xs:complexType>

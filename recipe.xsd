@@ -14,6 +14,7 @@
       <xs:sequence>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="zutat"/>
         <xs:element maxOccurs="unbounded" minOccurs="0" ref="step"/>
+        <xs:element maxOccurs="unbounded" minOccurs="0" name="activity" type="xs:string"/>
       </xs:sequence>
       <xs:attribute name="beschreibung">
         <xs:annotation>

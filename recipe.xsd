@@ -10,7 +10,7 @@
     </xs:complexType>
   </xs:element>
   <xs:complexType mixed="true" name="Step_T">
-    <xs:choice>
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
       <xs:element minOccurs="0" maxOccurs="unbounded" ref="zutat"/>
       <xs:element maxOccurs="unbounded" minOccurs="0" name="tool" type="Tool_T"/>
       <xs:element maxOccurs="unbounded" minOccurs="0" name="activity" type="Activity_T"/>

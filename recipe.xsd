@@ -5,29 +5,27 @@
       <xs:sequence>
         <xs:element name="beschreibung" type="Beschreibung_T"/>
         <xs:element maxOccurs="unbounded" minOccurs="0" ref="rezept"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="step"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="step" type="Step_T"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="step">
-    <xs:complexType mixed="true">
-      <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="zutat"/>
-        <xs:element maxOccurs="unbounded" minOccurs="0" name="tool" type="Tool_T"/>
-        <xs:element maxOccurs="unbounded" minOccurs="0" name="activity" type="Activity_T"/>
-        <xs:element maxOccurs="unbounded" minOccurs="0" ref="step"/>
-      </xs:sequence>
-      <xs:attribute name="beschreibung">
-        <xs:annotation>
-          <xs:documentation>Beschreibung des Vorganges
+  <xs:complexType mixed="true" name="Step_T">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="zutat"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="tool" type="Tool_T"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="activity" type="Activity_T"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="step" type="Step_T"/>
+    </xs:sequence>
+    <xs:attribute name="beschreibung">
+      <xs:annotation>
+        <xs:documentation>Beschreibung des Vorganges
 zB Erhitzen</xs:documentation>
-        </xs:annotation>
-      </xs:attribute>
-      <xs:attributeGroup ref="Dauer_T"/>
-      <xs:attribute name="threadID" type="xs:token"/>
-      <xs:attribute name="optional" type="xs:boolean"/>
-    </xs:complexType>
-  </xs:element>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attributeGroup ref="Dauer_T"/>
+    <xs:attribute name="threadID" type="xs:token"/>
+    <xs:attribute name="optional" type="xs:boolean"/>
+  </xs:complexType>
   <xs:element name="zutat">
     <xs:complexType mixed="true">
       <xs:attribute name="Einheit" type="xs:NCName">
@@ -104,6 +102,7 @@ Wenn man 10 min Möhren raspelt und dann 30 Minuten kocht, ist die Verarbeitungs
       <xs:extension base="xs:string">
         <xs:attribute name="id" type="xs:token"/>
         <xs:attribute name="feature" type="xs:string"/>
+        <xs:attribute name="size" type="xs:string"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>

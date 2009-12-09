@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rezept  
+    xmlns:red="rezepte.ength.de"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="rezepte.ength.de http://github.com/Farom/xmlcook/raw/master/recipe.xsd">
+    <beschreibung>
+        <name></name>
+        <anzahl_personen>1</anzahl_personen>
+        <language>deutsch</language>
+    </beschreibung>
+    <step>
+        Kochen jetzt
+    </step>
+    
+</rezept>

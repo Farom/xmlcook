@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rezept 
+    xmlns:red="rezepte.ength.de"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="rezepte.ength.de http://github.com/Farom/xmlcook/raw/master/recipe.xsd">
+    <beschreibung>
+        <name>Mediterane Nudeln mit Fenchel</name>
+        <anzahl_personen>4</anzahl_personen>
+        <language>deutsch</language>
+        <tag>****</tag>
+        <tag>Nudeln mit  Sauce</tag>
+    </beschreibung>
+    
+    
+    <step>
+        In einer <tool feature="großen">Pfanne</tool> <zutat>Öl</zutat> bei mittlerer Hitze erhitzen.
+        <zutat type="hat man in der Küche" menge="1" kEinheit="EL">Puderzucker</zutat> unterrühren und 3 Minuten braten 
+    </step>
+    <step threadID="2">
+        <tool size="5l">Topf</tool> <zutat type="hat man in der Küche">Wasser</zutat> mit <zutat type="hat man in der Küche" menge="3" kEinheit="EL">Salz</zutat>
+        und <zutat type="hat man in der Küche" menge="3" kEinheit="EL">süßes Paprikapulver</zutat> zum Kochen bringen.
+    </step>
+    
+    <step bearbeitungsdauer="PT3M">
+        <zutat>Schinken</zutat> und 
+        <zutat>Paprika</zutat> dazu geben, 3 min 
+        <activity>braten</activity>.
+    </step>
+    
+    <step>
+        In die <tool>Pfanne</tool> 
+        <zutat>Frühlingszwiebeln</zutat>, 
+        <zutat>Knoblauch</zutat>, 
+        <zutat>Zucchini</zutat>, 
+        <zutat>Provence-Kräuter</zutat>, 
+        <zutat>Tomantenmark</zutat> und
+        <zutat>Pfeffer</zutat>zugeben, und weitere 3 min <activity modified="unter rühren">braten</activity>.
+    </step>
+    <step>Eventuell etwas <zutat>Wasser</zutat> zugeben, es soll kein Brei werden!</step>
+    
+    <step><zutat>Tomaten</zutat> und <zutat>Basilikum</zutat> zugeben, weiter 2 min <activity>braten</activity>.</step>
+    <step threadID="2"><zutat>Spaghetti</zutat> abgießen und in der <tool>Pfanne</tool> <activity>unterheben</activity>.</step>
+    
+    <step optional="true">
+        Zur Verfeinerung während des <activity>Bratens</activity> ein Stück 
+        <zutat>Butter</zutat>
+        <activity>hinzugeben</activity>.</step>
+</rezept>
